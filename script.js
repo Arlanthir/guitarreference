@@ -10,4 +10,7 @@ document.querySelectorAll('[data-guitar]').forEach(el => {
     }
 });
 
+
+// getComputedStyle(document.documentElement).getPropertyValue('--string-width');
+
 */
