@@ -1,61 +1,11 @@
 
-
-
-:root {
-    --string-color: #aaa;
-    --string-width: 2px;
-}
+/*:root {
+    --fnjs-string-color: #ff0;
+    --fnjs-string-width: 2px;
+}*/
 
 .page {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
-}
-
-
-.fretboard {
-    position: relative;
-    height: 100px;
-}
-
-.nut {
-    position: absolute;
-    top: calc(-1 * var(--string-width) / 2);
-    bottom: calc(-1 * var(--string-width) / 2);
-    left: 0;
-    width: calc(2 * var(--string-width));
-    background-color: var(--string-color);
-    -webkit-print-color-adjust: exact;
-                  color-adjust: exact !important;
-}
-
-.inlay {
-    position: absolute;
-    top: 50%;
-    margin-left: -5px;
-    margin-top: -5px;
-    border-radius: 50%;
-    width: 10px;
-    height: 10px;
-    background-color: var(--string-color);
-    -webkit-print-color-adjust: exact;
-                  color-adjust: exact !important;
-}
-
-.fret {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-left: calc(-1 * var(--string-width) / 2);
-    border-right: var(--string-width) solid var(--string-color);
-    height: 100%;
-}
-
-.string {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: calc(-1 * var(--string-width) / 2);
-    border-bottom: var(--string-width) solid var(--string-color);
-    width: 100%;
 }
