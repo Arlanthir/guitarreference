@@ -3,7 +3,7 @@
 
 :root {
     --string-color: #aaa;
-    --string-width: 4px;
+    --string-width: 2px;
 }
 
 .page {
@@ -14,25 +14,29 @@
 
 
 .fretboard {
-    height: 120px;
-    border-left: 10px solid var(--string-color);
-    border-right: 5px solid var(--string-color);
+    position: relative;
+    height: 100px;
 }
 
-.string {
+.nut {
     position: absolute;
-    top: 0;
+    top: calc(-1 * var(--string-width) / 2);
+    bottom: calc(-1 * var(--string-width) / 2);
     left: 0;
-    margin-top: calc(-1 * var(--string-width) / 2);
-    border-bottom: var(--string-width) solid var(--string-color);
-    width: 100%;
+    width: calc(2 * var(--string-width));
+    background-color: var(--string-color);
 }
 
-.string2 { top: 20% }
-.string3 { top: 40% }
-.string4 { top: 60% }
-.string5 { top: 80% }
-.string6 { top: 100% }
+.inlay {
+    position: absolute;
+    top: 50%;
+    margin-left: -5px;
+    margin-top: -5px;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: var(--string-color);
+}
 
 .fret {
     position: absolute;
@@ -43,16 +47,11 @@
     height: 100%;
 }
 
-.fret1 { left: 5%; }
-.fret2 { left: 10%; }
-.fret3 { left: 15%; }
-.fret4 { left: 20%; }
-.fret5 { left: 25%; }
-.fret6 { left: 30%; }
-.fret7 { left: 35%; }
-.fret8 { left: 40%; }
-.fret9 { left: 45%; }
-.fret10 { left: 50%; }
-.fret11 { left: 55%; }
-.fret12 { left: 60%; }
-.fret13 { left: 65%; }
+.string {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: calc(-1 * var(--string-width) / 2);
+    border-bottom: var(--string-width) solid var(--string-color);
+    width: 100%;
+}
