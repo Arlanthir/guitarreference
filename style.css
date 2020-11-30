@@ -25,6 +25,8 @@
     left: 0;
     width: calc(2 * var(--string-width));
     background-color: var(--string-color);
+    -webkit-print-color-adjust: exact;
+                  color-adjust: exact !important;
 }
 
 .inlay {
@@ -36,6 +38,8 @@
     width: 10px;
     height: 10px;
     background-color: var(--string-color);
+    -webkit-print-color-adjust: exact;
+                  color-adjust: exact !important;
 }
 
 .fret {
