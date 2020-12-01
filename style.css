@@ -4,9 +4,21 @@
     --fnjs-string-width: 2px;
 }*/
 
+body {
+    font-family: sans-serif;
+}
+
+h2 {
+    margin: 1.5em 0 0 0;
+}
+
 .page {
     position: relative;
     /*--fnjs-fretboard-height: 200px;*/
+}
+
+.pentatonic .root-major {
+    --fnjs-note-bg-color: hsl(14, 100%, 40%);
 }
 
 @media only screen {

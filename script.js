@@ -7,6 +7,8 @@ class Fretboard extends HTMLElement {
 
         this.frets = this.getAttribute('frets') || 22;
         this.strings = this.getAttribute('strings') || 6;
+        this.nut = this.getAttribute('nut') === null? true : this.getAttribute('nut') === false;
+        this.legend = this.getAttribute('legend') === null? true : this.getAttribute('legend') === false;
         this.height = 0; // Will be updated later
 
         const template = document.createElement('template');
@@ -27,7 +29,7 @@ class Fretboard extends HTMLElement {
                 }
 
                 .wrapper {
-                    padding: 25px 5px 25px 30px;
+                    padding: 25px 5px 25px ${ this.nut ? '30px' : '5px' };
                 }
 
                 .fretboard {
@@ -40,7 +42,7 @@ class Fretboard extends HTMLElement {
                     top: calc(-1 * var(--string-width) / 2);
                     bottom: calc(-1 * var(--string-width) / 2);
                     left: 0;
-                    width: calc(2 * var(--string-width));
+                    width: calc(${this.nut? 2 : 1} * var(--string-width));
                     background-color: var(--string-color);
                     -webkit-print-color-adjust: exact;
                                   color-adjust: exact !important;
@@ -104,30 +106,33 @@ class Fretboard extends HTMLElement {
         // TODO: last fret has missing pixels
         let fretSpacing = 100 / this.frets;
         for (let i = 1; i <= this.frets; ++i) {
-            if ([0, 3, 5, 7, 9].includes(i % 12)) {
-                let inlay = document.createElement('div');
-                inlay.className = 'inlay';
-                inlay.style.left = (fretSpacing * (i - 0.5)) + '%';
-                if (i % 12 === 0) {
-                    inlay.style.top = '30%';
-                    fretboard.appendChild(inlay);
-                    inlay = document.createElement('div');
-                    inlay.className = 'inlay';
-                    inlay.style.left = (fretSpacing * (i - 0.5)) + '%';
-                    inlay.style.top = '70%';
-                }
-                fretboard.appendChild(inlay);
-            }
             let fret = document.createElement('div');
             fret.className = `fret`;
             fret.style.left = (fretSpacing * i) + '%';
             fretboard.appendChild(fret);
 
-            let fretLabel = document.createElement('div');
-            fretLabel.className = `fret-label`;
-            fretLabel.style.right = (100 - (fretSpacing * i)) + '%';
-            fretLabel.textContent = i;
-            fretboard.appendChild(fretLabel);
+            if (this.legend) {
+                if ([0, 3, 5, 7, 9].includes(i % 12)) {
+                    let inlay = document.createElement('div');
+                    inlay.className = 'inlay';
+                    inlay.style.left = (fretSpacing * (i - 0.5)) + '%';
+                    if (i % 12 === 0) {
+                        inlay.style.top = '30%';
+                        fretboard.appendChild(inlay);
+                        inlay = document.createElement('div');
+                        inlay.className = 'inlay';
+                        inlay.style.left = (fretSpacing * (i - 0.5)) + '%';
+                        inlay.style.top = '70%';
+                    }
+                    fretboard.appendChild(inlay);
+                }
+
+                let fretLabel = document.createElement('div');
+                fretLabel.className = `fret-label`;
+                fretLabel.style.right = (100 - (fretSpacing * i)) + '%';
+                fretLabel.textContent = i;
+                fretboard.appendChild(fretLabel);
+            }
         }
 
         
@@ -152,7 +157,7 @@ class Note extends HTMLElement {
         this.color = this.getAttribute('color') || 'var(--fnjs-note-color, #fff)';
         this.bgColor = this.getAttribute('bg') || 'var(--fnjs-note-bg-color, #111)';
         this.borderColor = this.getAttribute('border') || this.bgColor;
-        this.size = this.getAttribute('size') || this.parentElement.height / this.parentElement.strings;
+        this.size = this.getAttribute('size') || 1.1 * this.parentElement.height / this.parentElement.strings;
 
         let top = (100 / (this.parentElement.strings - 1) * (this.string - 1));
 
@@ -184,16 +189,17 @@ class Note extends HTMLElement {
                     left: ${left};
                     width: var(--size);
                     height: var(--size);
-                    margin-top: calc(-0.5 * var(--size) - 1px); /* 1px from border */
-                    margin-left: calc(-0.5 * var(--size) - 1px); /* 1px from border */
+                    margin-top: calc(-0.5 * var(--size));
+                    margin-left: calc(-0.5 * var(--size));
                     font-family: var(--font);
                     color: var(--note-color);
                     background-color: var(--bg-color);
                     text-align: center;
                     line-height: var(--size);
-                    border: 1px solid ${this.borderColor};
+                    border: 2px solid ${this.borderColor};
                     border-radius: 50%;
                     z-index: 1;
+                    box-sizing: border-box;
                     -webkit-print-color-adjust: exact;
                                   color-adjust: exact !important;
                 }
