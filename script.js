@@ -27,7 +27,7 @@ class Fretboard extends HTMLElement {
                 }
 
                 .wrapper {
-                    padding: 25px;
+                    padding: 25px 5px 25px 30px;
                 }
 
                 .fretboard {
@@ -157,7 +157,7 @@ class Note extends HTMLElement {
         let top = (100 / (this.parentElement.strings - 1) * (this.string - 1));
 
         let fretSpacing = 100 / this.parentElement.frets;
-        let left = this.fret == 0? fretSpacing * -0.25 : fretSpacing * (this.fret - 0.5); 
+        let left = this.fret == 0? (-this.size).toString() + 'px' : (fretSpacing * (this.fret - 0.5)).toString() + '%'; 
 
         const template = document.createElement('template');
 
@@ -181,7 +181,7 @@ class Note extends HTMLElement {
                 .note {
                     position: absolute;
                     top: ${top}%;
-                    left: ${left}%;
+                    left: ${left};
                     width: var(--size);
                     height: var(--size);
                     margin-top: calc(-0.5 * var(--size) - 1px); /* 1px from border */

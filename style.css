@@ -10,8 +10,15 @@
 }
 
 @media only screen {
+    body {
+        background-color: #ddd;
+    }
+
     .page {
+        padding: 25px;
+        margin: 20px auto;
         max-width: 800px;
-        margin: 0 auto;
+        background-color: #fff;
+        box-shadow: 5px 5px 20px #888888;
     }
 }
