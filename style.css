@@ -9,7 +9,16 @@ body {
 }
 
 h2 {
-    margin: 1.5em 0 0 0;
+    margin: 1.5em 0 0.5em 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table.bordered th, table.bordered td {
+    border: 1px solid #000;
 }
 
 .page {
@@ -17,8 +26,50 @@ h2 {
     /*--fnjs-fretboard-height: 200px;*/
 }
 
+.flex {
+    display: flex;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.flex > * {
+    margin: 0 10px;
+}
+
 .pentatonic .root-major {
     --fnjs-note-bg-color: hsl(14, 100%, 40%);
+}
+
+fnjs-chord {
+    width: 80px;
+}
+
+span.blues {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #fff;
+    background-color: hsl(207, 85%, 40%);
+    -webkit-print-color-adjust: exact;
+                  color-adjust: exact !important;
+}
+
+span.key-major,
+.key-major th {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #fff;
+    background-color:hsl(14, 100%, 40%);
+    -webkit-print-color-adjust: exact;
+                  color-adjust: exact !important;
+}
+
+span.key-minor,
+.key-minor th {
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color:hsl(23, 100%, 71%);
+    -webkit-print-color-adjust: exact;
+                  color-adjust: exact !important;
 }
 
 @media only screen {
