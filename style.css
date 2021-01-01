@@ -21,6 +21,10 @@ table.bordered th, table.bordered td {
     border: 1px solid #000;
 }
 
+table th, table td {
+    padding: 5px;
+}
+
 .page {
     position: relative;
     /*--fnjs-fretboard-height: 200px;*/
