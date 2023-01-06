@@ -213,7 +213,7 @@
         </fnjs-fretboard>
 
         <div class="flex">
-            <div>
+            <div class="chord-diagrams">
                 <h2>Chords</h2>
 
                 <table>
@@ -245,23 +245,6 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Dominant 7</td>
-                            <td>
-                                <fnjs-chord>
-                                    <fnjs-bar stringA="6" stringB="1" fret="1" rootColor="hsl(14, 100%, 40%)">1</fnjs-bar>
-                                    <fnjs-note string="5" fret="3">3</fnjs-note>
-                                    <fnjs-note string="3" fret="2">2</fnjs-note>
-                                </fnjs-chord>
-                            </td>
-                            <td>
-                                <fnjs-chord>
-                                    <fnjs-bar stringA="5" stringB="1" fret="1" rootColor="hsl(14, 100%, 40%)">1</fnjs-bar>
-                                    <fnjs-note string="4" fret="3">3</fnjs-note>
-                                    <fnjs-note string="2" fret="3">4</fnjs-note>
-                                </fnjs-chord>
-                            </td>
-                        </tr>
-                        <tr>
                             <td>Minor</td>
                             <td>
                                 <fnjs-chord>
@@ -279,10 +262,80 @@
                                 </fnjs-chord>
                             </td>
                         </tr>
+                        <tr>
+                            <td>Dom 7</td>
+                            <td>
+                                <fnjs-chord>
+                                    <fnjs-bar stringA="6" stringB="1" fret="1" rootColor="hsl(14, 100%, 40%)">1</fnjs-bar>
+                                    <fnjs-note string="5" fret="3">3</fnjs-note>
+                                    <fnjs-note string="3" fret="2">2</fnjs-note>
+                                </fnjs-chord>
+                            </td>
+                            <td>
+                                <fnjs-chord>
+                                    <fnjs-bar stringA="5" stringB="1" fret="1" rootColor="hsl(14, 100%, 40%)">1</fnjs-bar>
+                                    <fnjs-note string="4" fret="3">3</fnjs-note>
+                                    <fnjs-note string="2" fret="3">4</fnjs-note>
+                                </fnjs-chord>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
-            <div>
+            <div class="arpeggios">
+                <h2>Arpeggios</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Root 6</th>
+                            <th>Root 5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Major</td>
+                            <td>
+                                <fnjs-chord frets="4">
+                                    <fnjs-note string="6" fret="2" bg="hsl(14, 100%, 40%)">2</fnjs-note>
+                                    <fnjs-note string="5" fret="1">1</fnjs-note>
+                                    <fnjs-note string="5" fret="4">2</fnjs-note>
+                                    <fnjs-note string="4" fret="4" bg="hsl(14, 100%, 40%)">3</fnjs-note>
+                                    <fnjs-note string="3" fret="3">2</fnjs-note>
+                                    <fnjs-note string="2" fret="2">1</fnjs-note>
+                                </fnjs-chord>
+                            </td>
+                            <td>
+                                <fnjs-chord frets="4">
+                                    <fnjs-note string="5" fret="2" bg="hsl(14, 100%, 40%)">2</fnjs-note>
+                                    <fnjs-note string="4" fret="1">1</fnjs-note>
+                                    <fnjs-note string="4" fret="4">2</fnjs-note>
+                                    <fnjs-note string="3" fret="4" bg="hsl(14, 100%, 40%)">3</fnjs-note>
+                                    <fnjs-note string="2" fret="4">4</fnjs-note>
+                                    <fnjs-note string="1" fret="2">1</fnjs-note>
+                                </fnjs-chord>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Minor</td>
+                            <td>
+                            </td>
+                            <td>
+                                <fnjs-chord frets="4">
+                                    <fnjs-note string="5" fret="1" bg="hsl(14, 100%, 40%)">1</fnjs-note>
+                                    <fnjs-note string="5" fret="4">4</fnjs-note>
+                                    <fnjs-note string="4" fret="3">3</fnjs-note>
+                                    <fnjs-note string="3" fret="3" bg="hsl(14, 100%, 40%)">4</fnjs-note>
+                                    <fnjs-note string="2" fret="2">3</fnjs-note>
+                                    <fnjs-note string="1" fret="1">2</fnjs-note>
+                                </fnjs-chord>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="chord-keys">
                 <h2>Chords in <span class="key-major">major</span> / <span class="key-minor">minor</span> key</h2>
 
                 <table class="bordered">
@@ -373,6 +426,10 @@
                 </table>
             </div>
         </div>
+
+        <h2>Common chord progressions</h2>
+
+        <p>Some jazz: ii V I I</p>
     </div>
     <script src="script.js"></script>
 </body>
