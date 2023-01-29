@@ -40,6 +40,10 @@ table th, table td {
     margin: 0 10px;
 }
 
+.info {
+    font-size: 0.8em;
+}
+
 .pentatonic .root-major {
     --fnjs-note-bg-color: hsl(14, 100%, 40%);
 }
