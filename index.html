@@ -93,6 +93,7 @@
             <fnjs-note string="1" fret="2">8</fnjs-note>
 
             <fnjs-note string="5" fret="9">1</fnjs-note>
+            <fnjs-note string="6" fret="9" bg="#fff" border="#000" color="#000">5</fnjs-note>
             <fnjs-note string="5" fret="11" bg="#fff" border="#000" color="#000">2</fnjs-note>
             <fnjs-note string="4" fret="8" bg="#fff" border="#000" color="#000">3</fnjs-note>
             <fnjs-note string="4" fret="9" bg="#fff" border="#000" color="#000">4</fnjs-note>
@@ -241,107 +242,6 @@
     </div>
 
     <div class="page">
-
-        <div class="flex">
-            <div class="chord-keys">
-                <h2>Chords in <span class="key-major">major</span> / <span class="key-minor">minor</span> key</h2>
-
-                <table class="bordered">
-                    <thead>
-                        <tr class="key-major">
-                            <th>I</th>
-                            <th>ii</th>
-                            <th>iii</th>
-                            <th>IV</th>
-                            <th>V</th>
-                            <th>vi</th>
-                            <th>viiº</th>
-                        </tr>
-                        <tr class="key-minor">
-                            <th>III♭</th>
-                            <th>iv</th>
-                            <th>v</th>
-                            <th>VI♭</th>
-                            <th>VII♭</th>
-                            <th>i</th>
-                            <th>iiº</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>C</td>
-                            <td>Dm</td>
-                            <td>Em</td>
-                            <td>F</td>
-                            <td>G</td>
-                            <td>Am</td>
-                            <td>Bº</td>
-                        </tr>
-                        <tr>
-                            <td>D</td>
-                            <td>Em</td>
-                            <td>F#m</td>
-                            <td>G</td>
-                            <td>A</td>
-                            <td>Bm</td>
-                            <td>C#º</td>
-                        </tr>
-                        <tr>
-                            <td>E</td>
-                            <td>F#m</td>
-                            <td>G#m</td>
-                            <td>A</td>
-                            <td>B</td>
-                            <td>C#m</td>
-                            <td>D#º</td>
-                        </tr>
-                        <tr>
-                            <td>F</td>
-                            <td>Gm</td>
-                            <td>Am</td>
-                            <td>B♭</td>
-                            <td>C</td>
-                            <td>Dm</td>
-                            <td>Eº</td>
-                        <tr>
-                            <td>G</td>
-                            <td>Am</td>
-                            <td>Bm</td>
-                            <td>C</td>
-                            <td>D</td>
-                            <td>Em</td>
-                            <td>F#º</td>
-                        </tr>
-                        <tr>
-                            <td>A</td>
-                            <td>Bm</td>
-                            <td>C#m</td>
-                            <td>D</td>
-                            <td>E</td>
-                            <td>F#m</td>
-                            <td>G#º</td>
-                        </tr>
-                        <tr>
-                            <td>B</td>
-                            <td>C#m</td>
-                            <td>D#m</td>
-                            <td>E</td>
-                            <td>F#</td>
-                            <td>G#m</td>
-                            <td>A#º</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div>
-                <h2>Common chord progressions</h2>
-
-                <p>Some jazz: ii V I I</p>
-                <!-- TODO: root positions on neck -->
-            </div>
-        </div>
-
         <div class="flex">
             <div class="chord-diagrams">
                 <h2>Chords</h2>
@@ -411,6 +311,29 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>7/9</td>
+                            <td></td>
+                            <td>
+                                <fnjs-chord>
+                                    <fnjs-note string="5" fret="2" bg="hsl(14, 100%, 40%)">2</fnjs-note>
+                                    <fnjs-note string="4" fret="1">1</fnjs-note>
+                                    <fnjs-note string="3" fret="2">3</fnjs-note>
+                                    <fnjs-note string="2" fret="2">4</fnjs-note>
+                                </fnjs-chord>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7b9</td>
+                            <td></td>
+                            <td>
+                                <fnjs-chord>
+                                    <fnjs-note string="5" fret="2" bg="hsl(14, 100%, 40%)">2</fnjs-note>
+                                    <fnjs-bar stringA="4" stringB="2" fret="1">1</fnjs-bar>
+                                    <fnjs-note string="3" fret="2">3</fnjs-note>
+                                </fnjs-chord>
+                            </td>
+                        </tr>
+                        <tr>
                             <td>Minor 7</td>
                             <td class="flex">
                                 <fnjs-chord>
@@ -424,7 +347,7 @@
                                         <fnjs-note string="3" fret="1">3</fnjs-note>
                                         <fnjs-note string="2" fret="1">4</fnjs-note>
                                     </fnjs-chord>
-                                    <div class="info">(other strings muted<br>by 1st finger)</div>
+                                    <div class="info">(1st finger mutes)</div>
                                 </div>
                             </td>
                             <td>
@@ -436,8 +359,35 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>m7b5 (ø)</td>
+                            <td>
+                                <div>
+                                    <fnjs-chord>
+                                        <fnjs-note string="5" fret="0" bg="#fff" border="#fff" color="#000">X</fnjs-note>
+                                        <fnjs-note string="1" fret="0" bg="#fff" border="#fff" color="#000">X</fnjs-note>
+
+                                        <fnjs-note string="6" fret="2" bg="hsl(14, 100%, 40%)">2</fnjs-note>
+                                        <fnjs-note string="4" fret="2">3</fnjs-note>
+                                        <fnjs-note string="3" fret="2">4</fnjs-note>
+                                        <fnjs-note string="2" fret="1">1</fnjs-note>
+                                    </fnjs-chord>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
                             <td>Major 7<br>(Cmaj7 / CΔ)</td>
                             <td>
+                                <fnjs-chord>
+                                    <fnjs-note string="5" fret="0" bg="#fff" border="#fff" color="#000">X</fnjs-note>
+                                    <fnjs-note string="1" fret="0" bg="#fff" border="#fff" color="#000">X</fnjs-note>
+
+                                    <fnjs-note string="6" fret="1" bg="hsl(14, 100%, 40%)">1</fnjs-note>
+                                    <fnjs-note string="2" fret="1">2</fnjs-note>
+                                    <fnjs-note string="4" fret="2">3</fnjs-note>
+                                    <fnjs-note string="3" fret="2">4</fnjs-note>
+                                </fnjs-chord>
+                                <div class="info">(2nd finger mutes)</div>
                             </td>
                             <td>
                                 <fnjs-chord>
@@ -545,6 +495,109 @@
             </div>
         </div>
     </div>
+
+    <div class="page">
+        <div class="flex">
+            <div class="chord-keys">
+                <h2>Chords in <span class="key-major">major</span> / <span class="key-minor">minor</span> key</h2>
+
+                <table class="bordered">
+                    <thead>
+                        <tr class="key-major">
+                            <th>I</th>
+                            <th>ii</th>
+                            <th>iii</th>
+                            <th>IV</th>
+                            <th>V</th>
+                            <th>vi</th>
+                            <th>viiº</th>
+                        </tr>
+                        <tr class="key-minor">
+                            <th>III♭</th>
+                            <th>iv</th>
+                            <th>v</th>
+                            <th>VI♭</th>
+                            <th>VII♭</th>
+                            <th>i</th>
+                            <th>iiº</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>C</td>
+                            <td>Dm</td>
+                            <td>Em</td>
+                            <td>F</td>
+                            <td>G</td>
+                            <td>Am</td>
+                            <td>Bº</td>
+                        </tr>
+                        <tr>
+                            <td>D</td>
+                            <td>Em</td>
+                            <td>F#m</td>
+                            <td>G</td>
+                            <td>A</td>
+                            <td>Bm</td>
+                            <td>C#º</td>
+                        </tr>
+                        <tr>
+                            <td>E</td>
+                            <td>F#m</td>
+                            <td>G#m</td>
+                            <td>A</td>
+                            <td>B</td>
+                            <td>C#m</td>
+                            <td>D#º</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>Gm</td>
+                            <td>Am</td>
+                            <td>B♭</td>
+                            <td>C</td>
+                            <td>Dm</td>
+                            <td>Eº</td>
+                        <tr>
+                            <td>G</td>
+                            <td>Am</td>
+                            <td>Bm</td>
+                            <td>C</td>
+                            <td>D</td>
+                            <td>Em</td>
+                            <td>F#º</td>
+                        </tr>
+                        <tr>
+                            <td>A</td>
+                            <td>Bm</td>
+                            <td>C#m</td>
+                            <td>D</td>
+                            <td>E</td>
+                            <td>F#m</td>
+                            <td>G#º</td>
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td>C#m</td>
+                            <td>D#m</td>
+                            <td>E</td>
+                            <td>F#</td>
+                            <td>G#m</td>
+                            <td>A#º</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <h2>Common chord progressions</h2>
+
+                <p>Some jazz: ii V I I</p>
+                <!-- TODO: root positions on neck -->
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
