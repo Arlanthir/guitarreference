@@ -261,7 +261,7 @@ class Note extends HTMLElement {
             this.size = this.getAttribute('size') || Math.min(1.3 * this.guitarParent.height / this.guitarParent.frets,
                 1.3 * this.guitarParent.width / this.guitarParent.strings);
             left = (100 / (this.guitarParent.strings - 1) * (this.guitarParent.strings - this.string)) + '%';
-            top = this.fret == 0? (-this.size).toString() + 'px' : (fretSpacing * (this.fret - 0.5)).toString() + '%'; 
+            top = this.fret == 0? (-this.size + 5).toString() + 'px' : (fretSpacing * (this.fret - 0.5)).toString() + '%'; 
         }
 
         const template = document.createElement('template');

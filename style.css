@@ -21,8 +21,12 @@ table.bordered th, table.bordered td {
     border: 1px solid #000;
 }
 
-table th, table td {
-    padding: 5px;
+table th {
+    padding: 0 5px;
+}
+
+table td {
+    padding: 3px 5px;
 }
 
 .page {
